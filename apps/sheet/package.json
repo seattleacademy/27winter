@@ -6,7 +6,7 @@
   "author": "Gary Anderson",
   "license": "MIT",
   "alexa": {
-    "applicationId": "amzn1.echo-sdk-ams.app.999999-d0ed-9999-ad00-999999d00ebe"
+    "applicationId": "amzn1.ask.skill.ed42fa9b-f18c-4a29-ba2f-c4e1814a7246"
   },
   "dependencies": {
     "alexa-app": "^2.1.0",

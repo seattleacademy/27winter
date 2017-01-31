@@ -1,7 +1,6 @@
 var alexa = require('alexa-app');
 var gsjson = require('google-spreadsheet-to-json');
 
-
 // Allow this module to be reloaded by hotswap when changed
 module.change_code = 1;
 
@@ -15,14 +14,14 @@ app.launch(function(req, res) {
         .then(function(result) {
             console.log("result", result.length, result[0].student);
             res.say("these are the spreadsheet results");
-        	res.send();
+            res.send();
         })
         .catch(function(err) {
             console.log("error", err.message);
             res.say("There was a sheet error " + err.message);
             res.send();
         });
-        return false;
+    return false;
 });
 app.intent('CommandIntent', {
     "slots": { "COMMAND": "LITERAL" },
