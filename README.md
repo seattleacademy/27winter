@@ -35,3 +35,11 @@
  17.  Change for your needs.
  
  18.  Copy the Application ID from the first tab of the skill, and replace the other id in package.json of the app. Save.
+ 
+ 19.  Control-C from the server and cd app/sheet
+ 
+ 20.  npm install to make the sheet app for AWS
+ 
+ 21.  zip -r archive.zip index.js package.json node_modules/
+ 
+ 22.  Go to AWS site.
