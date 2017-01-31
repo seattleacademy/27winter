@@ -20,7 +20,7 @@
  
  10.  From Alexa Skill kit, click Getting Started button.
  
- 11.  Give the app a name of Google Sheets and an invocation name of sheet.  Click 
+ 11.  Create new Skill and Give the app a name of Google Sheets and an invocation name of sheet.  Click 
  
  12.  From the Alexa Tester page, copy intents to the Apps intents and utterances to the Apps utterances.  Click next.
  
@@ -42,4 +42,24 @@
  
  21.  zip -r archive.zip index.js package.json node_modules/
  
- 22.  Go to AWS site.
+ 22.  Go to AWS site and log in with Amazon account
+ 
+ 23. Click on Services -> compute -> lambda
+ 
+ 24. Create a Lambda Function with Blank Function blueprint
+ 
+ 25. Select Alexa Skills Kit as trigger
+ 
+ 26. Name function sheetReader, add description "reads Google Sheets"
+ 
+ 27. set Code Entry Type to 'Upload Zip', upload archive.zip
+ 
+ 28. Set role to "custom role", and allow default lambda execution
+ 
+ 29. Click next and then create function
+ 
+ 30. Click test, then copy ARN link in top right corner.
+ 
+ 31. In Alexa Skills, change configuration from seattleacademy.software/xxxx/ to the ARN link, and change bubble select from HTTPS to AWS
+ 
+ 32. Test Alexa Skill
