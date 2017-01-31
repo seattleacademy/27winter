@@ -8,12 +8,14 @@ module.change_code = 1;
 var app = new alexa.app('sheet');
 app.launch(function(req, res) {
     gsjson({
-            spreadsheetId: '1QW5jpQjCORczJNuc5s_CHrqocmY0_pN9FS2AjzOMubQ',
+            spreadsheetId: '1S8j1cilWy5hGujyGqRC9KhrxLKsMqJLTcy2NflM-z0c',
+            listOnly: true,
+
             // other options...
         })
         .then(function(result) {
-            console.log("result", result.length, result[0].student);
-            res.say("these are the spreadsheet results");
+            console.log("result", result.length, result);
+            res.say("these are the spreadsheet results " + result[0][0]);
             res.send();
         })
         .catch(function(err) {
