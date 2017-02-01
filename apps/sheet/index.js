@@ -9,8 +9,9 @@ var app = new alexa.app('sheet');
 
 function sayCell(req, res) {
     gsjson({
-            spreadsheetId: '1OIqHIHb1WQ9cn4jCDtb7k8nm4HJ3gJkZNPW5s9Wln08',
+            spreadsheetId: '1bU7pdEcJtwOw_EkPW2Aigbw0hIvwLdCd2tvgYeSGvF8',
             listOnly: true,
+            includeHeader: true,
 
             // other options...
         })
@@ -38,12 +39,23 @@ app.launch(function(req, res) {
     return false;
 });
 app.intent('CommandIntent', {
-    "slots": { "COMMAND": "LITERAL" },
+    "slots": {
+        "COMMAND": "LITERAL"
+    },
     "utterances": ["{next|previous|exit|COMMAND}}"]
 }, function(req, res) {
-    console.log("command", req.slot('COMMAND'))
+    console.log("command:", req.slot("COMMAND"));
+    var com = req.slot("COMMAND");
     num = res.session('num');
-    num = num + 1;
+
+    if (com == 'next') {
+        console.log("next called");
+        num = num + 1;
+    } else if (com == "previous") {
+        num = num - 1;
+        console.log("previous called")
+    }
+
     res.session('num', num)
     sayCell(req, res);
     return false;
